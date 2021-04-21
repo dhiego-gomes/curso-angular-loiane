@@ -1,68 +1,104 @@
-<section class="property-binding">
-    
-    <!-- INTERPOLAÇÃO    
-    <article>
-        <h3>Interpolação / Interpolation</h3>
-        <p>String renderizada com Interpolação: {{ url }}</p>
-        <p>Resultado de 1 + 1 {{ 1 + 1 }}</p>
-        <p>Resultado de 1 + 1 não é {{ 1 + 1 + getValor() }}</p>
-        <p>Gostou do curso do Angular? {{ cursoAngular && getCurtirCurso() }}</p>
-    </article>
+    <h1>AULA 09: DATA BINDING</h1>
+    <section class="property-binding">
+        <article>
+            <h3>Interpolação / Interpolation</h3>
+            <p>String renderizada com Interpolação: {{ url }}</p>
+            <p>Resultado de 1 + 1 {{ 1 + 1 }}</p>
+            <p>Resultado de 1 + 1 não é {{ 1 + 1 + getValor() }}</p>
+            <p>Gostou do curso do Angular? {{ cursoAngular && getCurtirCurso() }}</p>
+        </article>
 
-        PROPERTY BINDING
-    <article>
-        <h3>Property Binding</h3>
-        <img src="{{ urlImagem }}">
-        <img [src]="urlImagem">
-        <img bind-src="urlImagem">
-    </article> -->
+            PROPERTY BINDING
+        <article>
+            <h3>Property Binding</h3>
+            <img src="{{ urlImagem }}">
+            <img [src]="urlImagem">
+            <img bind-src="urlImagem">
+        </article>
 
-    <article>
-        <h3>Class e Style Binding </h3>
-        <div>
-            Selecione uma classe
-            <select #classe (change)="0">
-                <option value="alert-success">Sucesso</option>
-                <option value="alert-info">Informações</option>
-                <option value="alert-warning">Avisos</option>
-                <option value="alert-danger">Erro</option>
-            </select>
+    </section>
+
+    <h1>AULA 10: CLASS E STYLE BINDING</h1>
+    <section class="property-binding">
+        <article>
+            <h3>Class e Style Binding</h3>
+            <div>
+                Selecione uma classe
+                <select #classe (change)="0">
+                    <option value="alert-success">Sucesso</option>
+                    <option value="alert-info">Informações</option>
+                    <option value="alert-warning">Avisos</option>
+                    <option value="alert-danger">Erro</option>
+                </select>
+
+                <br><br>
+
+                <div class="alert {{ classe.value }}" role="alert">
+                    Texto colorido conforme valor do combobox.
+                </div>
+
+                <div class="alert" role="alert"
+                    [class.alert-success]="classe.value == 'alert-success'">
+                    Sucesso
+                </div>
+
+                <div class="alert" role="alert"
+                    [class.alert-info]="classe.value == 'alert-info'">
+                    Informações
+                </div>
+
+                <div class="alert" role="alert"
+                    [class.alert-warning]="classe.value == 'alert-warning'">
+                    Avisos
+                </div>
+
+                <div class="alert" role="alert"
+                    [class.alert-danger]="classe.value == 'alert-danger'">
+                    Erro
+                </div>
+
+                <div class="alert alert-danger" role="alert"
+                    [style.display]="classe.value == 'alert-danger' ? 'block' : 'none'">
+                    Esse texto só aparece em caso de erro.
+                </div>
+
+            </div>
+
+        </article>
+
+    </section>
+
+    <h1>AULA 11: EVENT BINDING</h1>
+    <section class="event-binding">
+        <article>
+            <h3>Event Binding</h3>
+
+            <button (click)="botaoClicado()"
+                class="btn btn-primary">
+                Me Clique!
+            </button>
 
             <br><br>
 
-            <div class="alert {{ classe.value }}" role="alert">
-                Texto colorido conforme valor do combobox.
-            </div>
+            <input type="text"
+                (keyup)="OnKeyUp($event)"
+                (keyup.enter)="salvarValor(campoInput.value)"
+                (blur)="salvarValor(campoInput.value)"
+                #campoInput>
 
-            <div class="alert" role="alert"
-                [class.alert-success]="classe.value == 'alert-success'">
-                Sucesso
-            </div>
+            <p>Valor atual: {{ valorAtual }}</p>
+            <p>Valor salvo: {{ valorSalvo }}</p>
 
+            <br><br>
 
-            <!-- CLASS BINDIND -->
-            <div class="alert" role="alert"
-                [class.alert-info]="classe.value == 'alert-info'">
-                Informações
-            </div>
+            <span
+                (mouseover)="onMouseOverOut()"
+                (mouseout)="onMouseOverOut()"
+                [class.highlight]="isMouseOver"
+                >
+                Passe o mouse sobre mim
+            </span>
 
-            <div class="alert" role="alert"
-                [class.alert-warning]="classe.value == 'alert-warning'">
-                Avisos
-            </div>
+        </article>
 
-            <div class="alert" role="alert"
-                [class.alert-danger]="classe.value == 'alert-danger'">
-                Erro
-            </div>
-
-            <div class="alert alert-danger" role="alert"
-                [style.display]="classe.value == 'alert-danger' ? 'block' : 'none'">
-                Esse texto só aparece em caso de erro.
-            </div>
-
-        </div>
-
-    </article>
-
-</section>
+    </section>

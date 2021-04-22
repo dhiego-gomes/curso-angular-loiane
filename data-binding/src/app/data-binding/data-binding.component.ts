@@ -10,9 +10,20 @@ export class DataBindingComponent implements OnInit {
   url: string = 'https://loiane.training'
   cursoAngular: boolean = true
   urlImagem: string = 'https://source.unsplash.com/collection/190727/400x200'
+  
   valorAtual: string = ''
   valorSalvo: string = ''
+
   isMouseOver: boolean = false
+
+  nomeDoCurso: string = 'Angular'
+
+  nome: string = 'abc'
+
+  pessoa: any = {
+    nome: 'Fulano',
+    idade: 20
+  }
 
   getValor() {
     return 1

@@ -1,4 +1,4 @@
-    <h1>AULA 09: DATA BINDING</h1>
+    <!-- <h1>AULA 09: DATA BINDING</h1>
     <section class="property-binding">
         <article>
             <h3>Interpolação / Interpolation</h3>
@@ -101,4 +101,46 @@
 
         </article>
 
+    </section> -->
+
+    <!-- <h1>AULA 12: TWO-WAY DATA BINDING</h1>
+    <section class="two-way-binding">
+        <article>
+            <h3>Two-Way Data Binding</h3>
+
+            <div>
+                <input type="text"
+                [ngModel]="nome"
+                (ngModelChange)="nome = $event">
+                
+                <input type="text" [(ngModel)]="nome">
+                <input type="text" bindon-ngModel="nome">
+                
+                <p>Você digitou: {{ nome }}</p>
+
+                <div>
+                    <input type="text" [(ngModel)]="pessoa.nome">
+                    <input type="text" [(ngModel)]="pessoa.idade">
+
+                    <p>Seu nome é {{ pessoa.nome }}. Sua idade é {{ pessoa.idade }} anos.</p>
+                </div>
+
+            </div>
+
+        </article>
+ 
+    </section> -->
+
+    <h1>AULA 13: INPUT BINDING</h1>
+    <section class="input-output-properties">
+        <article>
+            <h3>Input/Output Properties</h3>
+
+            <div>
+                
+                <app-curso [nome]="nomeDoCurso"></app-curso>
+            </div>
+
+        </article>
+ 
     </section>

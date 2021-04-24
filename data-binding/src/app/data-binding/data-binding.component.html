@@ -131,15 +131,14 @@
  
     </section> -->
 
-    <h1>AULA 13: INPUT BINDING</h1>
+    <h1>AULA 13 e 14: INPUT/OUTPUT PROPERTIES</h1>
     <section class="input-output-properties">
         <article>
-            <h3>Input/Output Properties</h3>
-
-            <div>
-                
+            <h3>Input/Output Properties</h3>                
                 <app-curso [nome]="nomeDoCurso"></app-curso>
-            </div>
+                <contador [valor]="valorInicial"
+                    (mudouValor)="onMudouValor($event)">
+                </contador>
 
         </article>
  

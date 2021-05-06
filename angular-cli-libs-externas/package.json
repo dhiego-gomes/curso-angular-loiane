@@ -1,5 +1,5 @@
 {
-  "name": "diretivas",
+  "name": "angular-cli-libs-externas",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
